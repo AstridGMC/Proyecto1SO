@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.38.2 -->
+<interface>
+  <requires lib="gtk+" version="3.22"/>
+  <object class="GtkWindow" id="window">
+    <property name="name">principal</property>
+    <property name="can-focus">False</property>
+    <property name="role">principal</property>
+    <property name="window-position">center-always</property>
+    <property name="icon-name">proyecto1</property>
+    <property name="gravity">center</property>
+    <signal name="destroy-event" handler="on_Principal_destroy_event" swapped="no"/>
+    <child>
+      <object class="GtkFixed" id="ContenedorPrincipal">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkButton" id="btnAccion">
+            <property name="label" translatable="yes">Cargar</property>
+            <property name="width-request">69</property>
+            <property name="height-request">29</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="tooltip-text" translatable="yes">ingresar archivo</property>
+            <property name="border-width">1</property>
+            <signal name="clicked" handler="on_Accion_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">368</property>
+            <property name="y">636</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledConsola">
+            <property name="width-request">819</property>
+            <property name="height-request">149</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="shadow-type">in</property>
+            <child>
+              <object class="GtkTextView" id="consola">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <signal name="key-release-event" handler="on_consola_key_press_event" swapped="no"/>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">6</property>
+            <property name="y">467</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolled2">
+            <property name="width-request">821</property>
+            <property name="height-request">392</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="shadow-type">in</property>
+            <child>
+              <object class="GtkTextView" id="mostrador">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="editable">False</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="x">8</property>
+            <property name="y">56</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="btnVerArbol">
+            <property name="label" translatable="yes">Ver Arbol</property>
+            <property name="width-request">91</property>
+            <property name="height-request">33</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+          </object>
+          <packing>
+            <property name="x">733</property>
+            <property name="y">12</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label1">
+            <property name="width-request">81</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+          </object>
+          <packing>
+            <property name="x">261</property>
+            <property name="y">8</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkFileChooserButton" id="DocumentChooser">
+            <property name="width-request">348</property>
+            <property name="height-request">44</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="title" translatable="yes"/>
+          </object>
+          <packing>
+            <property name="x">7</property>
+            <property name="y">631</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSwitch" id="btnModo">
+            <property name="width-request">98</property>
+            <property name="height-request">41</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="active">True</property>
+          </object>
+          <packing>
+            <property name="x">702</property>
+            <property name="y">635</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="lblText">
+            <property name="width-request">163</property>
+            <property name="height-request">42</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">Modo Interactivo</property>
+          </object>
+          <packing>
+            <property name="x">524</property>
+            <property name="y">636</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <child type="titlebar">
+      <placeholder/>
+    </child>
+  </object>
+</interface>
