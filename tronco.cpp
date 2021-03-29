@@ -17,14 +17,24 @@ using namespace std;
 #include "rama.cpp"
 
 class Tronco{
-    int pid;
-    static list<Rama> ramas;
-    int numeroRamas;
-    void crearRamas(int numRamas);
-    void destriuirRamas(int numero);
-    void dividirRamas(int numRamas);
-    void pintarTronco();
+    public:
+        int pid;
+        int numeroRamas;
+        string identificador;
+        static list<Rama> ramas;
+        int numeroRamas;
+        string getIdentificador();
+        void crearRamas(int numRamas);
+        void destriuirRamas(int numero);
+        void dividirRamas(int numRamas);
+        void pintarTronco();
+        Tronco(int ramas, int pid, string id);
 };
+
+string Tronco:: getIdentificador() { 
+     return this->identificador; 
+}
+
 
 void Tronco:: crearRamas(int numRamas){
     for (size_t i = 0; i < numRamas; i++)
@@ -81,6 +91,13 @@ void Tronco:: pintarTronco(){
         }
     }
 }
+
+Tronco::Tronco(int numRamas, int pidD, string id){
+    pid= pidD;
+    numRamas=numeroRamas;
+    id= identificador;
+}
+
 
 
 

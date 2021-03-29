@@ -37,8 +37,8 @@ semop(sem_id,semaphore,1);
 
 void initSem(int sem_id,int sem_num,int val)
 {
-union semnum {
-int val;
-struct semid_ds *buf;
-unsigned short *array;
+    union semnum {
+    int val;
+    struct semid_ds *buf;
+    unsigned short *array;
 }argument;

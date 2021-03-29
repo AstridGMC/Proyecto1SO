@@ -16,29 +16,48 @@ using namespace std;
 #include <sstream>
 #include "tronco.cpp"
 
-static list<int> arboles;
+class CreadorArbol{
+    public:
+    static list<Tronco> arboles;
+    CreadorArbol(int a);
+    void crearTronco(string identificador);
+    void destruirTronco(int tronco);
+    int buscarIdProcesoIndice();
+};
 
+CreadorArbol:: CreadorArbol(int a){
 
-int crearTronco(char *argv[])
+}
+
+void CreadorArbol::crearTronco(string identificador)
 {
     int pid;
     int status=0;
     char *path = "./tronco";
+
 	pid = fork();
 
 	if ( pid == 0 ) {
-        strcpy(argv[0], "tronco");
 		printf( "hijo Creado  del padre %d\n", (int)getpid() );
-        if (execvp(path, argv) < 0) {
-            cout<<"error al ejecutar programa del hijo";
-            exit(1);
-        };
+        Tronco nuevo(0,getpid(), identificador);
+        arboles.push_back(nuevo);
+        nuevo.pintarTronco();
 	} else {
-        arboles.push_back(pid);
         printf("Mi PID es el %d y he creado un proceso hijo cuyo pid es %d\n", getppid(),pid);
         wait(&status);
-        printf("\n El proceso hijo finalizo con el estado %d\n\n",status);
 	}
-	return 0;
+    
 }
+/*
+int  CreadorArbol:: buscarIdProcesoIndice(Arbol arbol){
+    
+    auto Iterator = arboles.begin();
+    int i=0;
+    do
+    {
+        auto salta = std::next(Iterator, i); 
+    } while (TRUE);
+    
+}
+*/
 
